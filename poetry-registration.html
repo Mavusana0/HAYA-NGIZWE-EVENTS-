@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register | Poetry Slam 2026</title>
+  <style>
+    body { 
+        font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.97), rgba(255, 255, 255, 0.97)), url('https://images.unsplash.com/photo-1533134486753-c833f0ed4866?q=80&w=2070&auto=format&fit=crop');
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    header { background-image: linear-gradient(rgba(142, 0, 0, 0.85), rgba(142, 0, 0, 0.85)), url('https://images.unsplash.com/photo-1511795405832-5a91a72097ac?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center; color: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+    .logo { font-size: 1.8rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+    nav { display: flex; }
+    nav a { color: white; margin-left: 25px; text-decoration: none; font-weight: bold; padding: 8px 15px; border-radius: 5px; transition: background-color 0.3s, color 0.3s; }
+    nav a:hover, nav a.active { background-color: white; color: #8e0000; }
+    .menu-toggle { display: none; flex-direction: column; cursor: pointer; }
+    .menu-toggle .bar { height: 3px; width: 25px; background-color: white; margin: 4px 0; transition: 0.4s; }
+    .page-header { background-color: #8e0000; color: white; padding: 3rem 1.5rem; text-align: center; }
+    .page-header h1 { margin: 0; font-size: 2.8rem; }
+    .page-header p { margin: 0.5rem 0 0; font-size: 1.2rem; opacity: 0.9; }
+    .container { padding: 3rem 2rem; max-width: 800px; margin: auto; }
+    .countdown { text-align: center; font-size: 1.8rem; margin-bottom: 2rem; font-weight: bold; color: #444; }
+    form { background: rgba(249, 249, 249, 0.9); padding: 2.5rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+    label { display: block; margin-bottom: .5rem; font-weight: bold; }
+    input, textarea { width: 100%; padding: 12px; margin-bottom: 1.5rem; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
+    button { padding: 1rem 2rem; background-color: #8e0000; color: white; border: none; border-radius: 6px; cursor: pointer; width: 100%; font-size: 1.1rem; }
+    .closed-message { text-align: center; background-color: #fff3cd; color: #856404; padding: 1.5rem; border-radius: 8px; border: 1px solid #ffeeba; margin-top: 2rem; }
+    .closed-message h3 { margin-top: 0; }
+    footer { background: #333; color: white; text-align: center; padding: 2.5rem; margin-top: 4rem; }
+    footer a { color: #ffc1c1; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    @media (max-width: 992px) {
+        .logo { font-size: 1.5rem; }
+        nav { display: none; flex-direction: column; width: 100%; text-align: center; background-color: rgba(142, 0, 0, 0.95); position: absolute; top: 70px; left: 0; }
+        nav.active { display: flex; }
+        nav a { margin: 1rem 0; padding: 1rem; }
+        .menu-toggle { display: flex; }
+    }
+    @media (max-width: 768px) { .page-header h1 { font-size: 2.2rem; } .container { padding: 1.5rem; } .countdown { font-size: 1.4rem; } }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Haya Ngizwe</div>
+    <div class="menu-toggle" id="mobile-menu"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+    <nav class="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="events.html">Events</a>
+      <a href="poetry-registration.html" class="active">Poetry Slam</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="page-header">
+    <h1>Haya Ngizwe Poetry Slam 2026</h1>
+    <p>Compete in the biggest poetry showdown and make your voice heard!</p>
+  </div>
+
+  <div class="container">
+    <div class="countdown" id="countdown">Countdown loading...</div>
+    <div class="closed-message">
+        <h3>Registrations Are Currently Closed</h3>
+        <p>Thank you for your interest in the Haya Ngizwe Poetry Slam 2026. Registrations have not yet opened. Please check back later for updates!</p>
+    </div>
+    <form>
+      <fieldset disabled>
+          <label for="fullname">Full Name:</label><input type="text" id="fullname" name="fullname" placeholder="Registrations are closed" />
+          <label for="email">Email Address:</label><input type="email" id="email" name="email" placeholder="Registrations are closed" />
+          <label for="phone">Phone Number:</label><input type="tel" id="phone" name="phone" placeholder="Registrations are closed" />
+          <label for="bio">Short Artist Bio / Message:</label><textarea id="bio" name="bio" rows="4" placeholder="Registrations are closed"></textarea>
+          <button type="submit">Submit Registration</button>
+      </fieldset>
+    </form>
+  </div>
+  
+  <footer>
+    © 2025 Haya Ngizwe Events · Empowering Creativity & Culture<br>
+    <a href="policy.html">Privacy Policy</a>
+  </footer>
+
+  <script>
+    const menu = document.querySelector('#mobile-menu');
+    const navMenu = document.querySelector('.nav-menu');
+    menu.addEventListener('click', () => navMenu.classList.toggle('active'));
+    const countdownEl = document.getElementById("countdown");
+    const targetDate = new Date("June 1, 2026 00:00:00").getTime();
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+      if (distance < 0) {
+        countdownEl.innerHTML = "The 2026 event season is here!";
+        return;
+      }
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      countdownEl.innerHTML = `Event starts in: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>

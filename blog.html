@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog | Haya Ngizwe Events</title>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background-color: #fffefc; }
+    header { background-image: linear-gradient(rgba(142, 0, 0, 0.85), rgba(142, 0, 0, 0.85)), url('https://images.unsplash.com/photo-1511795405832-5a91a72097ac?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center; color: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+    .logo { font-size: 1.8rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+    nav { display: flex; }
+    nav a { color: white; margin-left: 25px; text-decoration: none; font-weight: bold; padding: 8px 15px; border-radius: 5px; transition: background-color 0.3s, color 0.3s; }
+    nav a:hover, nav a.active { background-color: white; color: #8e0000; }
+    .menu-toggle { display: none; flex-direction: column; cursor: pointer; }
+    .menu-toggle .bar { height: 3px; width: 25px; background-color: white; margin: 4px 0; transition: 0.4s; }
+    .page-title { text-align: center; padding: 3rem 1rem; background-color: #fff8f8; }
+    .page-title h1 { color: #8e0000; font-size: 2.8rem; margin: 0; }
+    .page-title p { font-size: 1.2rem; color: #555; margin-top: 0.5rem; }
+    .container { padding: 3rem 2rem; max-width: 900px; margin: auto; }
+    .post { background: #ffffff; padding: 2.5rem; margin-bottom: 2.5rem; border-left: 6px solid #8e0000; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .post:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.12); }
+    .post h2 { margin-top: 0; color: #8e0000; font-size: 2rem; }
+    .post p { margin-bottom: 0.5rem; line-height: 1.8; font-size: 1.1rem; color: #555; }
+    .post small { color: #777; display: block; margin-bottom: 1.5rem; font-size: 0.9rem; }
+    footer { background: #333; color: white; text-align: center; padding: 2.5rem; margin-top: 3rem; }
+    footer a { color: #ffc1c1; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 992px) {
+        .logo { font-size: 1.5rem; }
+        nav { display: none; flex-direction: column; width: 100%; text-align: center; background-color: rgba(142, 0, 0, 0.95); position: absolute; top: 70px; left: 0; }
+        nav.active { display: flex; }
+        nav a { margin: 1rem 0; padding: 1rem; }
+        .menu-toggle { display: flex; }
+    }
+    @media (max-width: 768px) {
+        .page-title h1 { font-size: 2.2rem; }
+        .container { padding: 1rem; }
+        .post { padding: 1.5rem; }
+        .post h2 { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Haya Ngizwe</div>
+    <div class="menu-toggle" id="mobile-menu"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+    <nav class="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="events.html">Events</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="blog.html" class="active">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  
+  <div class="page-title">
+      <h1>Blog & News</h1>
+      <p>Stay updated with our upcoming events</p>
+  </div>
+
+  <div class="container">
+    <div class="post">
+      <h2>Announcing: WOMAN IN POETRY: UNAPOLOGETICALLY HERSELF</h2>
+      <small>Published on August 05, 2025</small>
+      <p>Haya Ngizwe Events is thrilled to announce our next major event, "WOMAN IN POETRY: UNAPOLOGETICALLY HERSELF." This special showcase, taking place on September 27, 2025, at The love of God disability centre, is dedicated to the powerful and diverse voices of women in the spoken word community. Prepare for an unforgettable day of raw emotion, profound storytelling, and fierce performances.</p>
+    </div>
+
+    <div class="post">
+      <h2>The Countdown Begins: Haya Ngizwe Poetry Slam 2026</h2>
+      <small>Published on July 20, 2025</small>
+      <p>Mark your calendars and start preparing! The renowned Haya Ngizwe Poetry Slam is set to make its grand return in 2026. While the final date and venue are still under wraps, the anticipation is already building for what promises to be our biggest and most competitive slam yet. Poets from all corners of Mzansi will gather to compete for glory, honor, and the coveted title. Stay tuned for more announcements!</p>
+    </div>
+  </div>
+  
+  <footer>
+    © 2025 Haya Ngizwe Events · Empowering Creativity & Culture<br>
+    <a href="policy.html">Privacy Policy</a>
+  </footer>
+  
+  <script>
+    const menu = document.querySelector('#mobile-menu');
+    const navMenu = document.querySelector('.nav-menu');
+    menu.addEventListener('click', () => navMenu.classList.toggle('active'));
+  </script>
+
+</body>
+</html>

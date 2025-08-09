@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us | Haya Ngizwe Events</title>
+  <style>
+    body { 
+        font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0;
+        background-image: linear-gradient(rgba(247, 247, 247, 0.96), rgba(247, 247, 247, 0.96)), url('https://images.unsplash.com/photo-1533134486753-c833f0ed4866?q=80&w=2070&auto=format&fit=crop');
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    header { background-image: linear-gradient(rgba(142, 0, 0, 0.85), rgba(142, 0, 0, 0.85)), url('https://images.unsplash.com/photo-1511795405832-5a91a72097ac?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center; color: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+    .logo { font-size: 1.8rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+    nav { display: flex; }
+    nav a { color: white; margin-left: 25px; text-decoration: none; font-weight: bold; padding: 8px 15px; border-radius: 5px; transition: background-color 0.3s, color 0.3s; }
+    nav a:hover, nav a.active { background-color: white; color: #8e0000; }
+    .menu-toggle { display: none; flex-direction: column; cursor: pointer; }
+    .menu-toggle .bar { height: 3px; width: 25px; background-color: white; margin: 4px 0; transition: 0.4s; }
+    .container { max-width: 800px; margin: 4rem auto; background: rgba(255, 255, 255, 0.9); padding: 3rem; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+    h1 { color: #8e0000; text-align: center; margin-bottom: 0.5rem; font-size: 2.8rem; }
+    .subtitle { text-align: center; font-size: 1.2rem; color: #555; margin-bottom: 3rem; }
+    form label { display: block; margin-top: 1.5rem; font-weight: bold; color: #444; }
+    input, textarea { width: 100%; padding: 14px; margin-top: 8px; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem; box-sizing: border-box; }
+    button { background-color: #8e0000; color: white; padding: 1rem 2rem; border: none; margin-top: 2rem; cursor: pointer; font-size: 1.1rem; border-radius: 6px; width: 100%; transition: background-color 0.3s; }
+    button:hover { background-color: #6e0000; }
+    .map { margin-top: 3rem; border-radius: 10px; overflow: hidden; border: 1px solid #ddd; }
+    .map h3 { color: #8e0000; text-align: center; margin-bottom: 1.5rem; font-size: 1.5rem; }
+    .footer-container { background-color: #333; color: white; text-align: center; padding: 2.5rem; }
+    .footer-container p { margin: 0.5rem 0; }
+    .footer-container a { color: #ffc1c1; text-decoration: none; }
+    .footer-container a:hover { text-decoration: underline; }
+    @media (max-width: 992px) {
+        .logo { font-size: 1.5rem; }
+        nav { display: none; flex-direction: column; width: 100%; text-align: center; background-color: rgba(142, 0, 0, 0.95); position: absolute; top: 70px; left: 0; }
+        nav.active { display: flex; }
+        nav a { margin: 1rem 0; padding: 1rem; }
+        .menu-toggle { display: flex; }
+    }
+    @media (max-width: 768px) { h1 { font-size: 2.2rem; } .container { padding: 1.5rem; margin: 2rem auto; } }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Haya Ngizwe</div>
+    <div class="menu-toggle" id="mobile-menu"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+    <nav class="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="events.html">Events</a>
+      <a href="poetry-registration.html">Poetry Slam</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>Contact Us</h1>
+    <p class="subtitle">Have a question or want to work with us? Drop us a line!</p>
+    <form name="contact" method="POST" data-netlify="true">
+      <label for="name">Full Name</label><input type="text" id="name" name="name" required />
+      <label for="email">Email Address</label><input type="email" id="email" name="email" required />
+      <label for="location">Your Location</label><input type="text" id="location" name="location" placeholder="e.g. Tembisa, Gauteng" />
+      <label for="message">Your Message</label><textarea id="message" name="message" rows="6" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <div class="map">
+      <h3>Our Office</h3>
+      <iframe src="https://www.google.com/maps?q=16+Lerubisi+Street,+Mostu,+Tembisa,+1632&output=embed" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </div>
+
+  <div class="footer-container">
+    <p>© 2025 Haya Ngizwe Events · Located at 16 Lerubisi Street, Mostu, Tembisa 1632</p>
+    <p>hayangizwe@gmail.com · 065 916 8844</p>
+    <a href="policy.html">Privacy Policy</a>
+  </div>
+
+  <script>
+    const menu = document.querySelector('#mobile-menu');
+    const navMenu = document.querySelector('.nav-menu');
+    menu.addEventListener('click', () => navMenu.classList.toggle('active'));
+  </script>
+
+</body>
+</html>
